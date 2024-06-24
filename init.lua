@@ -18,11 +18,20 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
-	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
 	{
-    "nvim-telescope/telescope.nvim", tag = "0.1.8",
-      dependencies = { "nvim-lua/plenary.nvim" }
-    }
+		"catppuccin/nvim",
+		name = "catppuccin",
+		priority = 1000
+	},
+	{
+    "nvim-telescope/telescope.nvim",
+		tag = "0.1.8",
+    dependencies = { "nvim-lua/plenary.nvim" }
+  },
+	{
+		"nvim-treesitter/nvim-treesitter",
+		build = ":TSUpdate"
+	}
 }
 
 local opts = {}
@@ -37,3 +46,11 @@ vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 
 require("catppuccin").setup()
 vim.cmd.colorscheme "catppuccin"
+
+local config = require("nvim-treesitter.configs")
+
+config.setup({
+	ensure_installed = {"lua", "javascript", "vim", "elixir", "heex", "html", "typescript", "rust"},
+	highlight = { enable = true },
+  indent = { enable = true },
+})
