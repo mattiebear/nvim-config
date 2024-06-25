@@ -5,3 +5,4 @@ vim.g.mapleader = ","
 
 vim.keymap.set("n", "<leader>h", "<C-w><left>")
 vim.keymap.set("n", "<leader>l", "<C-w><right>")
+vim.keymap.set("n", "<BS>", "ciw")
