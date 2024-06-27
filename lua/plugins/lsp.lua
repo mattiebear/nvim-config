@@ -9,7 +9,7 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "tsserver", "elixirls" }
+				ensure_installed = { "lua_ls", "tsserver", "elixirls", "rust_analyzer" }
 			})
 		end
 	},
@@ -19,6 +19,7 @@ return {
 			local lspconfig = require("lspconfig")
 			lspconfig.lua_ls.setup({})
 			lspconfig.tsserver.setup({})
+			lspconfig.rust_analyzer.setup({})
 			lspconfig.elixirls.setup({
 				-- TODO: Move this to a bin and use ENV to manage
 				cmd = { "/Users/matt/dev/elixir-ls-build/language_server.sh" }
