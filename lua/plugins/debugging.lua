@@ -9,7 +9,8 @@ return {
 
 		dap.adapters.mix_task = {
 			type = "executable",
-			command = "/Users/matt/dev/elixir-ls-build/debugger.sh",
+			-- TODO: Source from ENV
+			command = "/Users/matt/.config/nvim/elixir-ls-build/debugger.sh",
 			args = {},
 		}
 

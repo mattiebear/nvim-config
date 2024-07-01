@@ -29,9 +29,9 @@ return {
 				capabilities = capabilities,
 			})
 			lspconfig.elixirls.setup({
-				-- TODO: Move this to a bin and use ENV to manage
 				capabilities = capabilities,
-				cmd = { "/Users/matt/dev/elixir-ls-build/language_server.sh" },
+				-- TODO: Source from ENV
+				cmd = { "/Users/matt/.config/nvim/elixir-ls-build/language_server.sh" },
 			})
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
