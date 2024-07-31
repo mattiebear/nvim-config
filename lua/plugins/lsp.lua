@@ -9,7 +9,7 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "tsserver", "elixirls", "rust_analyzer" },
+				ensure_installed = { "lua_ls", "tsserver", "elixirls", "emmet_language_server", "rust_analyzer" },
 			})
 		end,
 	},
@@ -32,6 +32,10 @@ return {
 				capabilities = capabilities,
 				-- TODO: Source from ENV
 				cmd = { "/Users/matt/.config/nvim/elixir-ls-build/language_server.sh" },
+			})
+			lspconfig.emmet_language_server.setup({
+				capabilities = capabilities,
+				filetypes = { "css", "eruby", "html", "htmldjango", "javascriptreact", "less", "pug", "sass", "scss", "typescriptreact", "htmlangular", "heex" }
 			})
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
