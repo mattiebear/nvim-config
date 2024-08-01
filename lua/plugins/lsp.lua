@@ -30,8 +30,7 @@ return {
 			})
 			lspconfig.elixirls.setup({
 				capabilities = capabilities,
-				-- TODO: Source from ENV
-				cmd = { "/Users/matt/.config/nvim/elixir-ls-build/language_server.sh" },
+				cmd = { os.getenv("NVIM_CONFIG_DIR") .. "/elixir-ls-build/language_server.sh"},
 			})
 			lspconfig.emmet_language_server.setup({
 				capabilities = capabilities,
